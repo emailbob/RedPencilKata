@@ -1,0 +1,9 @@
+D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\RedPencilKata.tests\bin\Debug\RedPencilKata.tests.dll
+D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\RedPencilKata.tests\bin\Debug\RedPencilKata.tests.pdb
+D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\RedPencilKata.tests\bin\Debug\nunit.framework.dll
+D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\RedPencilKata.tests\bin\Debug\Promotion.dll
+D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\RedPencilKata.tests\bin\Debug\Promotion.pdb
+D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\RedPencilKata.tests\bin\Debug\nunit.framework.xml
+D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\RedPencilKata.tests\obj\Debug\Promotion.tests.csprojResolveAssemblyReference.cache
+D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\RedPencilKata.tests\obj\Debug\RedPencilKata.tests.dll
+D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\RedPencilKata.tests\obj\Debug\RedPencilKata.tests.pdb

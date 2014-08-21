@@ -1,0 +1,4 @@
+D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\Promotion\bin\Debug\Promotion.dll
+D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\Promotion\bin\Debug\Promotion.pdb
+D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\Promotion\obj\Debug\Promotion.dll
+D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\Promotion\obj\Debug\Promotion.pdb

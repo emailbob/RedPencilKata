@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\RedPencilKata.tests\bin\Debug\RedPencilKata.tests.dll" total="17" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-08-21" time="01:05:30">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.8009" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="D:\Program Files (x86)\NUnit 2.6.3\bin" machine-name="BIGDADDY" user="Bob" user-domain="BIGDADDY" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="D:\Users\Bob\Documents\Visual Studio 2013\Projects\RedPencilKata\RedPencilKata.tests\bin\Debug\RedPencilKata.tests.dll" executed="True" result="Success" success="True" time="0.227" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="RedPencilKata" executed="True" result="Success" success="True" time="0.211" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="tests" executed="True" result="Success" success="True" time="0.211" asserts="0">
+            <results>
+              <test-suite type="TestFixture" name="RedPencilItemtionTests" executed="True" result="Success" success="True" time="0.209" asserts="0">
+                <results>
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Change_ItemFullPrice" executed="True" result="Success" success="True" time="0.056" asserts="2" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_FullPriceStableAtLeastThrityDays_False" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_FullPriceStableAtLeastThrityDays_True" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_InValidPromotionPriceChangeIsRedPencilItemtion_False" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_InValidPromotionPriceReductionEndsPromotion_True" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_NewItemIsRedPencilItemtion_False" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_PromotionLastsThrityDays_True" executed="True" result="Success" success="True" time="0.003" asserts="1" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_PromotionPriceIsFivePercentOrHigher_False" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_PromotionPriceIsFivePercentOrHigher_True" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_PromotionPriceIsThrityPercentOrLower_False" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_PromotionPriceIsThrityPercentOrLower_True" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_StartAnotherRedPencilItemtionAfterCurrentEnds_True" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_ValidPromotionPriceChangeIsRedPencilItemtion_True" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_ValidPromotionPriceIncreaseEndsPromotion_True" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Check_ValidPromotionPriceReductionChangeDoesNotExtendPromotion_True" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Set_ItemPromotionPrice" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+                  <test-case name="RedPencilKata.tests.RedPencilItemtionTests.Set_NewItemFullPrice" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
