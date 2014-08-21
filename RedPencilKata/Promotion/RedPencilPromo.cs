@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace Promotion
 {
@@ -16,13 +15,13 @@ namespace Promotion
                 item.PromotionPrice = newPrice;
 
                 // start promotion if rules pass
-                if (isDiscountInRange(item) && isFullPriceStable(item))
+                if (IsDiscountInRange(item) && IsFullPriceStable(item))
                 {
-                    item = startPromotion(item);
+                    item = StartPromotion(item);
                 }
                 else
                 {
-                    item = endPromotion(item);
+                    item = EndPromotion(item);
                 }
             }
             else
@@ -32,44 +31,44 @@ namespace Promotion
                 {
                     item.PromotionPrice = newPrice;
 
-                    if (!isDiscountInRange(item) || !isFullPriceStable(item))
-                        item = endPromotion(item);
+                    if (!IsDiscountInRange(item) || !IsFullPriceStable(item))
+                        item = EndPromotion(item);
                 }
                 else
                 {
-                    item = endPromotion(item);
+                    item = EndPromotion(item);
                 }
             }
 
             return item;
         }
 
-        public double priceReductionPercent(RedPencilItem item)
+        public double PriceReductionPercent(RedPencilItem item)
         {
             return (double)(((item.FullPrice - item.PromotionPrice) / item.FullPrice) * 100);
         }
 
-        public bool passLowerPercent(RedPencilItem item)
+        public bool PassLowerPercent(RedPencilItem item)
         {
-            return (priceReductionPercent(item) >= 5);
+            return (PriceReductionPercent(item) >= 5);
         }
 
-        public bool passUpperPercent(RedPencilItem item)
+        public bool PassUpperPercent(RedPencilItem item)
         {
-            return (priceReductionPercent(item) <= 30);
+            return (PriceReductionPercent(item) <= 30);
         }
 
-        public bool isDiscountInRange(RedPencilItem item)
+        public bool IsDiscountInRange(RedPencilItem item)
         {
-            return (passLowerPercent(item) && passUpperPercent(item));
+            return (PassLowerPercent(item) && PassUpperPercent(item));
         }
 
-        public bool isFullPriceStable(RedPencilItem item)
+        public bool IsFullPriceStable(RedPencilItem item)
         {
             return (DateTime.Now - item.FullPriceUpdateDate).TotalDays >= 30;
         }
 
-        private RedPencilItem startPromotion(RedPencilItem item)
+        private static RedPencilItem StartPromotion(RedPencilItem item)
         {
             item.IsRedPencilPromo = true;
             item.PromotionStartDate = DateTime.Now;
@@ -78,7 +77,7 @@ namespace Promotion
             return item;
         }
 
-        private RedPencilItem endPromotion(RedPencilItem item)
+        private static RedPencilItem EndPromotion(RedPencilItem item)
         {
             item.IsRedPencilPromo = false;
             item.PromotionEndDate = DateTime.Now;

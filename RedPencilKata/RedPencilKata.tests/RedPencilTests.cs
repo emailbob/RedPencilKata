@@ -20,7 +20,7 @@ namespace RedPencilKata.tests
         [Test]
         public void Set_NewItemFullPrice()
         {            
-            RedPencilItem item = new RedPencilItem(100.00m);
+            var item = new RedPencilItem(100.00m);
             TextOutput(item);
 
             Assert.AreEqual(100.00m, item.FullPrice);
@@ -29,8 +29,8 @@ namespace RedPencilKata.tests
         [Test]
         public void Change_ItemFullPrice()
         {
-            RedPencilItem item = new RedPencilItem(100.00m);
-            DateTime initalChangeDate = item.FullPriceUpdateDate;
+            var item = new RedPencilItem(100.00m);
+            var initalChangeDate = item.FullPriceUpdateDate;
             TextOutput(item);
 
             //System.Threading.Thread.Sleep(2000); //added to verify that FullPriceUpdateDate is getting updated
@@ -44,7 +44,7 @@ namespace RedPencilKata.tests
         [Test]
         public void Check_NewItemIsRedPencilItemtion_False()
         {
-            RedPencilItem item = new RedPencilItem(100.00m);
+            var item = new RedPencilItem(100.00m);
             TextOutput(item);
 
             Assert.IsFalse(item.IsRedPencilPromo);
@@ -54,7 +54,7 @@ namespace RedPencilKata.tests
         [Test]
         public void Set_ItemPromotionPrice()
         {            
-            RedPencilItem item = new RedPencilItem(100.00m);
+            var item = new RedPencilItem(100.00m);
             _test.ChangePromotionPrice(item, 80.00m);
             TextOutput(item);
 
@@ -65,80 +65,78 @@ namespace RedPencilKata.tests
         [Test]
         public void Check_PromotionPriceIsFivePercentOrHigher_True()
         {
-            RedPencilItem item = new RedPencilItem(100.00m);
+            var item = new RedPencilItem(100.00m);
             _test.ChangePromotionPrice(item, 95.00m);
             TextOutput(item);
 
-            Assert.IsTrue(_test.passLowerPercent(item));
+            Assert.IsTrue(_test.PassLowerPercent(item));
 
-            RedPencilItem item2 = new RedPencilItem(100.00m);
+            var item2 = new RedPencilItem(100.00m);
             _test.ChangePromotionPrice(item2, 94.99m);
             TextOutput(item2);
 
-            Assert.IsTrue(_test.passLowerPercent(item2));
+            Assert.IsTrue(_test.PassLowerPercent(item2));
         }
 
         [Test]
         public void Check_PromotionPriceIsFivePercentOrHigher_False()
         {
-            RedPencilItem item = new RedPencilItem(100.00m);
+            var item = new RedPencilItem(100.00m);
             _test.ChangePromotionPrice(item, 95.01m);
             TextOutput(item);
 
-            Assert.IsFalse(_test.passLowerPercent(item));
+            Assert.IsFalse(_test.PassLowerPercent(item));
         }
 
         [Test]
         public void Check_PromotionPriceIsThrityPercentOrLower_True()
         {
-            RedPencilItem item = new RedPencilItem(100.00m);
+            var item = new RedPencilItem(100.00m);
             _test.ChangePromotionPrice(item, 70.00m);
             TextOutput(item);
 
-            Assert.IsTrue(_test.passUpperPercent(item));
+            Assert.IsTrue(_test.PassUpperPercent(item));
 
-            RedPencilItem item2 = new RedPencilItem(100.00m);
+            var item2 = new RedPencilItem(100.00m);
             _test.ChangePromotionPrice(item2, 70.01m);
             TextOutput(item2);
 
-            Assert.IsTrue(_test.passUpperPercent(item2));
+            Assert.IsTrue(_test.PassUpperPercent(item2));
         }
 
         [Test]
         public void Check_PromotionPriceIsThrityPercentOrLower_False()
         {
-            RedPencilItem item = new RedPencilItem(100.00m);
+            var item = new RedPencilItem(100.00m);
             _test.ChangePromotionPrice(item, 69.99m);
             TextOutput(item);
 
-            Assert.IsFalse(_test.passUpperPercent(item));
+            Assert.IsFalse(_test.PassUpperPercent(item));
         }
 
         [Test]
         public void Check_FullPriceStableAtLeastThrityDays_True()
         {
-            RedPencilItem item = new RedPencilItem(100.00m);
-            item.FullPriceUpdateDate = DateTime.Now.AddDays(-30);
+            var item = new RedPencilItem(100.00m) {FullPriceUpdateDate = DateTime.Now.AddDays(-30)};
             TextOutput(item);
            
-            Assert.IsTrue(_test.isFullPriceStable(item));
+            Assert.IsTrue(_test.IsFullPriceStable(item));
         }
 
         [Test]
         public void Check_FullPriceStableAtLeastThrityDays_False()
         {
-            RedPencilItem item = new RedPencilItem(100.00m);
-            item.FullPriceUpdateDate = DateTime.Now.AddDays(-10);
+            var item = new RedPencilItem(100.00m) {FullPriceUpdateDate = DateTime.Now.AddDays(-10)};
             _test.ChangePromotionPrice(item, 80.00m);
             TextOutput(item);
 
-            Assert.IsFalse(_test.isFullPriceStable(item));
+            Assert.IsFalse(_test.IsFullPriceStable(item));
         }
 
         [Test]
         public void Check_ValidPromotionPriceChangeIsRedPencilItemtion_True()
         {
-            RedPencilItem item = new RedPencilItem(100.00m, _makeStableDate);
+            var item = new RedPencilItem(100.00m, _makeStableDate);
             _test.ChangePromotionPrice(item, 80.00m);
             TextOutput(item);
 
@@ -148,7 +146,7 @@ namespace RedPencilKata.tests
         [Test]
         public void Check_InValidPromotionPriceChangeIsRedPencilItemtion_False()
         {
-            RedPencilItem item = new RedPencilItem(100.00m, _makeStableDate);
+            var item = new RedPencilItem(100.00m, _makeStableDate);
             _test.ChangePromotionPrice(item, 10.00m);
             TextOutput(item);
 
@@ -158,7 +156,7 @@ namespace RedPencilKata.tests
         [Test]
         public void Check_PromotionLastsThrityDays_True()
         {
-            RedPencilItem item = new RedPencilItem(100.00m, _makeStableDate);
+            var item = new RedPencilItem(100.00m, _makeStableDate);
             _test.ChangePromotionPrice(item, 80.00m);
             TextOutput(item);
 
@@ -168,9 +166,9 @@ namespace RedPencilKata.tests
         [Test]
         public void Check_ValidPromotionPriceReductionChangeDoesNotExtendPromotion_True()
         {
-            RedPencilItem item = new RedPencilItem(100.00m);
+            var item = new RedPencilItem(100.00m);
             _test.ChangePromotionPrice(item, 90.00m);
-            DateTime initalEndDate = item.PromotionEndDate.Value;
+            var initalEndDate = item.PromotionEndDate.Value;
             TextOutput(item);
 
             _test.ChangePromotionPrice(item, 80.00m);
@@ -182,7 +180,7 @@ namespace RedPencilKata.tests
         [Test]
         public void Check_ValidPromotionPriceIncreaseEndsPromotion_True()
         {
-            RedPencilItem item = new RedPencilItem(100.00m);
+            var item = new RedPencilItem(100.00m);
             _test.ChangePromotionPrice(item, 80.00m);
             TextOutput(item);
 
@@ -195,7 +193,7 @@ namespace RedPencilKata.tests
         [Test]
         public void Check_InValidPromotionPriceReductionEndsPromotion_True()
         {
-            RedPencilItem item = new RedPencilItem(100.00m, _makeStableDate);
+            var item = new RedPencilItem(100.00m, _makeStableDate);
             _test.ChangePromotionPrice(item, 80.00m);
             TextOutput(item);
 
@@ -210,7 +208,7 @@ namespace RedPencilKata.tests
         [Test]
         public void Check_StartAnotherRedPencilItemtionAfterCurrentEnds_True()
         {
-            RedPencilItem item = new RedPencilItem(100.00m, _makeStableDate);
+            var item = new RedPencilItem(100.00m, _makeStableDate);
             _test.ChangePromotionPrice(item, 80.00m);
             TextOutput(item);
 
@@ -229,8 +227,8 @@ namespace RedPencilKata.tests
             Console.WriteLine("\nFullPrice:" + item.FullPrice);
             Console.WriteLine("PromotionPrice:" + item.PromotionPrice);
             Console.WriteLine("IsRedPencilPromo:" + item.IsRedPencilPromo);
-            Console.WriteLine("priceReductionPercent:" + _test.priceReductionPercent(item));
-            Console.WriteLine("isFullPriceStable:" + _test.isFullPriceStable(item));
+            Console.WriteLine("priceReductionPercent:" + _test.PriceReductionPercent(item));
+            Console.WriteLine("isFullPriceStable:" + _test.IsFullPriceStable(item));
             Console.WriteLine("FullPriceUpdateDate:" + item.FullPriceUpdateDate);
             Console.WriteLine("PromotionStartDate:" + item.PromotionStartDate);
             Console.WriteLine("PromotionEndDate:" + item.PromotionEndDate);

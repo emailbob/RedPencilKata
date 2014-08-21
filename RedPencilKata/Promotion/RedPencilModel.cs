@@ -4,7 +4,7 @@ namespace Promotion
 {
     public class RedPencilItem 
     {
-        private decimal fullPrice;
+        private decimal _fullPrice;
 
         public RedPencilItem(decimal fullPrice)
         {
@@ -20,8 +20,8 @@ namespace Promotion
 
         public decimal FullPrice
         {
-            get { return fullPrice; }
-            set { fullPrice = value; FullPriceUpdateDate = DateTime.Now; }
+            get { return _fullPrice; }
+            set { _fullPrice = value; FullPriceUpdateDate = DateTime.Now; }
         }
 
         public decimal PromotionPrice { get; set; }
